@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dry Days Calendar | LookupJoy — India’s Info Hub</title>
-    <meta name="description" content="See upcoming dry days in your city. LookupJoy is India’s trusted hub for dry days, holidays, and event planning.">
+    <title>Dry Days Calendar - Find Upcoming Dry Days in India | LookupJoy</title>
+    <meta name="description" content="Stay informed about upcoming dry days in your city. Our Dry Days Calendar provides a complete list of no-alcohol days in India, helping you plan accordingly.">
     <meta property="og:title" content="Dry Days Calendar | LookupJoy">
     <meta property="og:description" content="See upcoming dry days in your city. LookupJoy is India’s trusted hub for dry days, holidays, and event planning.">
     <meta property="og:image" content="/icons/og-image.png">
@@ -49,9 +49,10 @@
           <span class="tool-page-title" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:1.3rem;color:var(--primary);margin-left:0.5rem;">Dry Days Calendar</span>
         </div>
             <form class="tool-search-form" onsubmit="event.preventDefault(); handleToolSearch('city')">
-                <input type="text" id="tool-search-input" class="tool-search-input" placeholder="Enter City" autocomplete="off" value="">
-                <button type="submit" class="tool-search-btn">Search</button>
-                <button type="button" class="tool-search-another-btn" onclick="clearToolSearch()">Search Another</button>
+                <label for="tool-search-input" class="sr-only">Enter City</label>
+                <input type="text" id="tool-search-input" class="tool-search-input" placeholder="Enter City" autocomplete="off" value="" aria-label="City Search Input">
+                <button type="submit" class="tool-search-btn" aria-label="Search">Search</button>
+                <button type="button" class="tool-search-another-btn" onclick="clearToolSearch()" aria-label="Clear Search">Search Another</button>
             </form>
             <div id="result" class="results-card">
                 <p>Enter a city above to see dry days.</p>
@@ -67,6 +68,39 @@
             <!-- Affiliate link/content goes here -->
         </section>
     </main>
+    <section class="content-section">
+      <h2>About Dry Days</h2>
+      <p>A dry day is a day when the sale of alcohol is prohibited. Dry days are observed on major national holidays and festivals, as well as on election days.</p>
+      <h3>Frequently Asked Questions (FAQs)</h3>
+      <dl>
+        <dt>What is a dry day?</dt>
+        <dd>A dry day is a specific day when the government prohibits the sale of alcohol in stores, clubs, and bars.</dd>
+        <dt>Why are dry days declared?</dt>
+        <dd>Dry days are declared to honor religious or national sentiments, or to prevent any untoward incidents during elections.</dd>
+        <dt>How can I check for dry days?</dt>
+        <dd>You can use our Dry Days Calendar to check for upcoming dry days in your city.</dd>
+      </dl>
+    </section>
+    <section class="related-tools">
+      <h2>Related Tools</h2>
+      <div class="tool-grid">
+        <a href="/pages/pin.html" class="tool-card">
+          <i class="fas fa-map-pin"></i>
+          <h3>PIN Codes</h3>
+          <p>Find your area's PIN codes easily.</p>
+        </a>
+        <a href="/pages/ifsc.html" class="tool-card">
+          <i class="fas fa-university"></i>
+          <h3>IFSC Lookup</h3>
+          <p>Search your bank's IFSC codes.</p>
+        </a>
+        <a href="/pages/rto.html" class="tool-card">
+          <i class="fas fa-car"></i>
+          <h3>RTO Codes</h3>
+          <p>Get vehicle RTO info by code.</p>
+        </a>
+      </div>
+    </section>
 
     <footer>
         <div class="container">

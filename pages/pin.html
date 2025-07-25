@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PIN Code Lookup | LookupJoy — India’s Info Hub</title>
-    <meta name="description" content="Find any Indian PIN code instantly. LookupJoy is India’s trusted hub for postal codes, post office info, and more.">
+    <title>PIN Code Lookup - Find Postal Codes in India | LookupJoy</title>
+    <meta name="description" content="Easily find PIN codes for any location in India. Get accurate and up-to-date postal code information with our simple-to-use PIN Code Lookup tool.">
     <meta property="og:title" content="PIN Code Lookup | LookupJoy">
     <meta property="og:description" content="Find any Indian PIN code instantly. LookupJoy is India’s trusted hub for postal codes, post office info, and more.">
     <meta property="og:image" content="/icons/og-image.png">
@@ -39,10 +39,11 @@
         <p>Find any Indian PIN code instantly. Enter a 6-digit PIN code below to get post office and location details.</p>
       </section>
       <form class="tool-search-form" onsubmit="event.preventDefault(); handlePinSearch()">
+        <label for="pin-search-input" class="sr-only">Enter PIN code</label>
         <i class="fas fa-search"></i>
-        <input type="text" id="pin-search-input" class="tool-search-input" placeholder="Enter PIN code (e.g. 110001)" autocomplete="off">
-        <button type="submit" class="tool-search-btn">Search</button>
-        <button type="button" class="tool-search-another-btn" onclick="clearPinSearch()">Clear</button>
+        <input type="text" id="pin-search-input" class="tool-search-input" placeholder="Enter PIN code (e.g. 110001)" autocomplete="off" aria-label="PIN Code Search Input">
+        <button type="submit" class="tool-search-btn" aria-label="Search">Search</button>
+        <button type="button" class="tool-search-another-btn" onclick="clearPinSearch()" aria-label="Clear Search">Clear</button>
       </form>
     </main>
     <div id="pin-modal" class="ifsc-modal" style="display:none;">
@@ -55,6 +56,39 @@
         <button class="tool-search-btn" onclick="resetPinSearch()" style="width:100%;margin-top:1.2rem;">Search Another</button>
       </div>
     </div>
+    <section class="content-section">
+      <h2>About PIN Codes</h2>
+      <p>A Postal Index Number (PIN) or PIN Code is a 6-digit code used by India Post for sorting mail. The first digit indicates the region, the second the sub-region, the third the sorting district, and the last three digits represent the post office.</p>
+      <h3>Frequently Asked Questions (FAQs)</h3>
+      <dl>
+        <dt>What is a PIN code?</dt>
+        <dd>A PIN code is a 6-digit number that helps in the efficient sorting and delivery of mail in India.</dd>
+        <dt>How can I find a PIN code?</dt>
+        <dd>You can use our PIN Code Lookup tool to find the PIN code for any location in India.</dd>
+        <dt>Can I find a location using a PIN code?</dt>
+        <dd>Yes, our tool allows you to find the post office and location details for any given PIN code.</dd>
+      </dl>
+    </section>
+    <section class="related-tools">
+      <h2>Related Tools</h2>
+      <div class="tool-grid">
+        <a href="/pages/ifsc.html" class="tool-card">
+          <i class="fas fa-university"></i>
+          <h3>IFSC Lookup</h3>
+          <p>Search your bank's IFSC codes.</p>
+        </a>
+        <a href="/pages/rto.html" class="tool-card">
+          <i class="fas fa-car"></i>
+          <h3>RTO Codes</h3>
+          <p>Get vehicle RTO info by code.</p>
+        </a>
+        <a href="/pages/std.html" class="tool-card">
+          <i class="fas fa-phone"></i>
+          <h3>STD Codes</h3>
+          <p>Find city STD/ISD codes quickly.</p>
+        </a>
+      </div>
+    </section>
     <footer>
       <p>© 2025 LookupJoy. All rights reserved.</p>
       <div class="socials">

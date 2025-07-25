@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RTO Code Lookup | LookupJoy — India’s Info Hub</title>
-    <meta name="description" content="Get vehicle RTO info by code. LookupJoy is India’s trusted hub for RTO, vehicle registration, and transport details.">
+    <title>RTO Vehicle Information - Find Vehicle Registration Details | LookupJoy</title>
+    <meta name="description" content="Find complete RTO vehicle information for any registered vehicle in India. Use our RTO Lookup tool to get vehicle registration details, owner information, and more.">
     <meta property="og:title" content="RTO Code Lookup | LookupJoy">
     <meta property="og:description" content="Get vehicle RTO info by code. LookupJoy is India’s trusted hub for RTO, vehicle registration, and transport details.">
     <meta property="og:image" content="/icons/og-image.png">
@@ -39,10 +39,11 @@
         <p>Find vehicle registration details by number (e.g., MH02CL0555). Enter the registration number below to get details. <b>Note:</b> Live data requires a backend due to captcha.</p>
       </section>
       <form class="tool-search-form" onsubmit="event.preventDefault(); handleRtoSearch()">
+        <label for="rto-search-input" class="sr-only">Enter Registration Number</label>
         <i class="fas fa-search"></i>
-        <input type="text" id="rto-search-input" class="tool-search-input" placeholder="Enter Registration No. (e.g. MH02CL0555)" autocomplete="off">
-        <button type="submit" class="tool-search-btn">Search</button>
-        <button type="button" class="tool-search-another-btn" onclick="clearRtoSearch()">Clear</button>
+        <input type="text" id="rto-search-input" class="tool-search-input" placeholder="Enter Registration No. (e.g. MH02CL0555)" autocomplete="off" aria-label="RTO Search Input">
+        <button type="submit" class="tool-search-btn" aria-label="Search">Search</button>
+        <button type="button" class="tool-search-another-btn" onclick="clearRtoSearch()" aria-label="Clear Search">Clear</button>
       </form>
     </main>
     <div id="rto-modal" class="ifsc-modal" style="display:none;">
@@ -55,6 +56,39 @@
         <button class="tool-search-btn" onclick="resetRtoSearch()" style="width:100%;margin-top:1.2rem;">Search Another</button>
       </div>
     </div>
+    <section class="content-section">
+      <h2>About RTO Codes</h2>
+      <p>The Regional Transport Office (RTO) is a government organization responsible for vehicle registration and driver licensing in India. Each RTO has a unique code that is used to identify the region where a vehicle is registered.</p>
+      <h3>Frequently Asked Questions (FAQs)</h3>
+      <dl>
+        <dt>What is an RTO code?</dt>
+        <dd>An RTO code is a unique code assigned to each Regional Transport Office in India.</dd>
+        <dt>Why is an RTO code required?</dt>
+        <dd>It is used to identify the region where a vehicle is registered and to track vehicle information.</dd>
+        <dt>How can I find RTO information?</dt>
+        <dd>You can use our RTO Code Lookup tool to find information about any RTO in India.</dd>
+      </dl>
+    </section>
+    <section class="related-tools">
+      <h2>Related Tools</h2>
+      <div class="tool-grid">
+        <a href="/pages/pin.html" class="tool-card">
+          <i class="fas fa-map-pin"></i>
+          <h3>PIN Codes</h3>
+          <p>Find your area's PIN codes easily.</p>
+        </a>
+        <a href="/pages/ifsc.html" class="tool-card">
+          <i class="fas fa-university"></i>
+          <h3>IFSC Lookup</h3>
+          <p>Search your bank's IFSC codes.</p>
+        </a>
+        <a href="/pages/std.html" class="tool-card">
+          <i class="fas fa-phone"></i>
+          <h3>STD Codes</h3>
+          <p>Find city STD/ISD codes quickly.</p>
+        </a>
+      </div>
+    </section>
     <footer>
       <p>© 2025 LookupJoy. All rights reserved.</p>
       <div class="socials">
