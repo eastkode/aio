@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTO Code Lookup | LookupJoy — India’s Info Hub</title>
+    <meta name="description" content="Get vehicle RTO info by code. LookupJoy is India’s trusted hub for RTO, vehicle registration, and transport details.">
+    <meta property="og:title" content="RTO Code Lookup | LookupJoy">
+    <meta property="og:description" content="Get vehicle RTO info by code. LookupJoy is India’s trusted hub for RTO, vehicle registration, and transport details.">
+    <meta property="og:image" content="/icons/og-image.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lookupjoy.com/rto.html">
+    <link rel="canonical" href="https://lookupjoy.com/rto.html">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/icons/og-image.png" type="image/png">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5037443653543939" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header Responsive Ad -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5037443653543939" data-ad-slot="8502355676" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <header class="main-header glassy">
+      <div class="header-inner">
+        <div class="logo"><i class="fas fa-car"></i> <span>LookupJoy</span></div>
+        <nav>
+          <a href="../index.html">Home</a>
+          <a href="../sitemap.xml">Sitemap</a>
+          <a href="../privacy.html">Privacy</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      <section class="tool-logo-title" style="margin-top:90px;">
+        <span class="tool-page-icon" style="color:var(--accent);font-size:2.2rem;vertical-align:middle;"><i class="fas fa-car"></i></span>
+        <span class="tool-page-title" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:1.3rem;color:var(--primary);margin-left:0.5rem;">Vehicle Registration Lookup</span>
+      </section>
+      <section class="tool-intro">
+        <p>Find vehicle registration details by number (e.g., MH02CL0555). Enter the registration number below to get details. <b>Note:</b> Live data requires a backend due to captcha.</p>
+      </section>
+      <form class="tool-search-form" onsubmit="event.preventDefault(); handleRtoSearch()">
+        <i class="fas fa-search"></i>
+        <input type="text" id="rto-search-input" class="tool-search-input" placeholder="Enter Registration No. (e.g. MH02CL0555)" autocomplete="off">
+        <button type="submit" class="tool-search-btn">Search</button>
+        <button type="button" class="tool-search-another-btn" onclick="clearRtoSearch()">Clear</button>
+      </form>
+    </main>
+    <div id="rto-modal" class="ifsc-modal" style="display:none;">
+      <div class="ifsc-modal-content">
+        <span class="ifsc-modal-close" onclick="closeRtoModal()">&times;</span>
+        <div id="rto-modal-result"></div>
+        <!-- Modal AdSense Ad -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5037443653543939" data-ad-slot="8502355676" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        <button class="tool-search-btn" onclick="resetRtoSearch()" style="width:100%;margin-top:1.2rem;">Search Another</button>
+      </div>
+    </div>
+    <footer>
+      <p>© 2025 LookupJoy. All rights reserved.</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </footer>
+    <script src="../js/loader.js"></script>
+    <script>
+      function showRtoModal(contentHtml) {
+        document.getElementById('rto-modal-result').innerHTML = contentHtml;
+        document.getElementById('rto-modal').style.display = 'flex';
+      }
+      function closeRtoModal() {
+        document.getElementById('rto-modal').style.display = 'none';
+      }
+      function resetRtoSearch() {
+        closeRtoModal();
+        clearRtoSearch();
+      }
+      function handleRtoSearch() {
+        const val = document.getElementById('rto-search-input').value.trim();
+        if (!val) {
+          showRtoModal('<p>Please enter a registration number.</p>');
+          return;
+        }
+        showRtoModal('<p><i class="fas fa-spinner fa-spin"></i> Searching...</p>');
+        setTimeout(() => {
+          // Mock result for now
+          showRtoModal(`
+            <div class="results-card-inner">
+              <h3><span class="fa-car"></span> BMW 740 L I PETROL <span style="font-size:0.9rem;color:var(--accent);">(MH02CL0555)</span></h3>
+              <p><strong>Owner Name:</strong> SHAH RUKH KHAN</p>
+              <p><strong>Registration Date:</strong> 20-Jan-2012</p>
+              <p><strong>Chassis No:</strong> WBAKB42080CY83879</p>
+              <p><strong>Engine No:</strong> 16257849</p>
+              <p><strong>Vehicle Class:</strong> LMVIMP</p>
+              <p><strong>Fuel Type:</strong> PETROL</p>
+              <p><strong>Maker Model:</strong> BMW INDIA PVT. LTD., BMW 740 L I PETROL</p>
+            </div>
+          `);
+        }, 1200);
+      }
+      function clearRtoSearch() {
+        document.getElementById('rto-search-input').value = '';
+        document.getElementById('rto-search-input').focus();
+      }
+    </script>
+</body>
+</html>

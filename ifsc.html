@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFSC Code Lookup | LookupJoy — India’s Info Hub</title>
+    <meta name="description" content="Search Indian bank IFSC codes easily. LookupJoy is India’s trusted hub for IFSC, MICR, and branch details.">
+    <meta property="og:title" content="IFSC Code Lookup | LookupJoy">
+    <meta property="og:description" content="Search Indian bank IFSC codes easily. LookupJoy is India’s trusted hub for IFSC, MICR, and branch details.">
+    <meta property="og:image" content="/icons/og-image.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lookupjoy.com/ifsc.html">
+    <link rel="canonical" href="https://lookupjoy.com/ifsc.html">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/icons/og-image.png" type="image/png">
+</head>
+<body>
+    <header class="main-header">
+      <div class="container header-flex">
+        <div class="logo">
+          <span class="logo-icon" style="color:var(--primary);font-size:2.1rem;vertical-align:middle;"><i class="fa-solid fa-magnifying-glass-location"></i></span>
+          <span class="logo-text" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:1.5rem;color:var(--primary);margin-left:0.5rem;">LookupJoy</span>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="pin.html">PIN Code</a></li>
+            <li><a href="ifsc.html">IFSC</a></li>
+            <li><a href="rto.html">RTO</a></li>
+            <li><a href="drydays.html">Dry Days</a></li>
+            <li><a href="fuel.html">Fuel Price</a></li>
+            <li><a href="gold.html">Gold Rate</a></li>
+            <li><a href="std.html">STD Code</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div id="ads-banner-top" class="ad-placeholder">Small Banner AdSense Slot (Header)</div>
+
+    <main class="container">
+      <section class="tool-section">
+        <div class="tool-logo-title">
+          <span class="tool-page-icon" style="color:var(--accent);font-size:2.2rem;vertical-align:middle;"><i class="fa-solid fa-building-columns"></i></span>
+          <span class="tool-page-title" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:1.3rem;color:var(--primary);margin-left:0.5rem;">IFSC Code Lookup</span>
+        </div>
+            <form class="tool-search-form" onsubmit="event.preventDefault(); handleToolSearch('ifsc')">
+                <input type="text" id="tool-search-input" class="tool-search-input" placeholder="Enter IFSC code" autocomplete="off" value="">
+                <button type="submit" class="tool-search-btn">Search</button>
+                <button type="button" class="tool-search-another-btn" onclick="clearToolSearch()">Search Another</button>
+            </form>
+            <div id="result" class="results-card">
+                <p>Enter an IFSC code above to see results.</p>
+            </div>
+            <div class="ad-placeholder">Responsive Display Ad (Above Results)</div>
+        </section>
+
+        <div id="ads-banner-bottom" class="ad-placeholder">Responsive Display Ad (Below Results)</div>
+
+        <section class="affiliate-box">
+            <h4>Related Financial Services</h4>
+            <p>Compare bank accounts, loans, and credit cards.</p>
+            <!-- Affiliate link/content goes here -->
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 AllIndiaInfo.com. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+      function handleToolSearch(param) {
+        const val = document.getElementById('tool-search-input').value.trim();
+        if (!val) return;
+        window.location.href = window.location.pathname + '?' + param + '=' + encodeURIComponent(val);
+      }
+      function clearToolSearch() {
+        document.getElementById('tool-search-input').value = '';
+        document.getElementById('tool-search-input').focus();
+      }
+    </script>
+</body>
+</html>

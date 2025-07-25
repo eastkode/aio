@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IFSC Code Lookup | LookupJoy — India’s Trusted Info Hub</title>
+  <meta name="description" content="Find any Indian bank IFSC code instantly. LookupJoy is India’s trusted hub for IFSC, MICR, and branch details.">
+  <meta property="og:title" content="IFSC Code Lookup | LookupJoy">
+  <meta property="og:description" content="Find any Indian bank IFSC code instantly. LookupJoy is India’s trusted hub for IFSC, MICR, and branch details.">
+  <meta property="og:image" content="/icons/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lookupjoy.com/pages/ifsc.html">
+  <link rel="canonical" href="https://lookupjoy.com/pages/ifsc.html">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header class="main-header glassy">
+    <div class="header-inner">
+      <div class="logo"><i class="fas fa-search"></i> <span>LookupJoy</span></div>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="../sitemap.xml">Sitemap</a>
+        <a href="../privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <section class="tool-logo-title" style="margin-top:90px;">
+      <span class="tool-page-icon" style="color:var(--accent);font-size:2.2rem;vertical-align:middle;"><i class="fas fa-university"></i></span>
+      <span class="tool-page-title" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:1.3rem;color:var(--primary);margin-left:0.5rem;">IFSC Code Lookup</span>
+    </section>
+    <section class="tool-intro">
+      <p>LookupJoy helps you find any Indian bank’s IFSC code, MICR, and branch details instantly. Enter your IFSC code below to get full details, or search by bank and branch name.</p>
+    </section>
+    <form class="tool-search-form" onsubmit="event.preventDefault(); handleToolSearch('ifsc')">
+      <i class="fas fa-search"></i>
+      <input type="text" id="tool-search-input" class="tool-search-input" placeholder="Enter IFSC code (e.g. SBIN0000001)" autocomplete="off">
+      <button type="submit" class="tool-search-btn">Search</button>
+      <button type="button" class="tool-search-another-btn" onclick="clearToolSearch()">Clear</button>
+    </form>
+    <div id="result" class="results-card">
+      <p>Enter an IFSC code above to see results.</p>
+    </div>
+    <div class="ad-placeholder">Responsive Display Ad (Above Results)</div>
+    <section class="affiliate-box">
+      <h4>Related Financial Services</h4>
+      <p>Compare bank accounts, loans, and credit cards.</p>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 LookupJoy. All rights reserved.</p>
+    <div class="socials">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+    </div>
+  </footer>
+  <script src="../js/loader.js"></script>
+  <script>
+    function handleToolSearch(param) {
+      const val = document.getElementById('tool-search-input').value.trim();
+      if (!val) return;
+      window.location.href = window.location.pathname + '?' + param + '=' + encodeURIComponent(val);
+    }
+    function clearToolSearch() {
+      document.getElementById('tool-search-input').value = '';
+      document.getElementById('tool-search-input').focus();
+    }
+  </script>
+</body>
+</html>

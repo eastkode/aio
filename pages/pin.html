@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIN Code Lookup | LookupJoy — India’s Info Hub</title>
+    <meta name="description" content="Find any Indian PIN code instantly. LookupJoy is India’s trusted hub for postal codes, post office info, and more.">
+    <meta property="og:title" content="PIN Code Lookup | LookupJoy">
+    <meta property="og:description" content="Find any Indian PIN code instantly. LookupJoy is India’s trusted hub for postal codes, post office info, and more.">
+    <meta property="og:image" content="/icons/og-image.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lookupjoy.com/pin.html">
+    <link rel="canonical" href="https://lookupjoy.com/pin.html">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/icons/og-image.png" type="image/png">
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+    <!-- Header Responsive Ad -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5037443653543939" data-ad-slot="8502355676" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <header class="main-header glassy">
+      <div class="header-inner">
+        <div class="logo"><i class="fas fa-map-pin"></i> <span>LookupJoy</span></div>
+        <nav>
+          <a href="../index.html">Home</a>
+          <a href="../sitemap.xml">Sitemap</a>
+          <a href="../privacy.html">Privacy</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      <section class="tool-logo-title" style="margin-top:90px;">
+        <span class="tool-page-icon" style="color:var(--accent);font-size:2.2rem;vertical-align:middle;"><i class="fas fa-map-pin"></i></span>
+        <span class="tool-page-title" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:1.3rem;color:var(--primary);margin-left:0.5rem;">PIN Code Lookup</span>
+      </section>
+      <section class="tool-intro">
+        <p>Find any Indian PIN code instantly. Enter a 6-digit PIN code below to get post office and location details.</p>
+      </section>
+      <form class="tool-search-form" onsubmit="event.preventDefault(); handlePinSearch()">
+        <i class="fas fa-search"></i>
+        <input type="text" id="pin-search-input" class="tool-search-input" placeholder="Enter PIN code (e.g. 110001)" autocomplete="off">
+        <button type="submit" class="tool-search-btn">Search</button>
+        <button type="button" class="tool-search-another-btn" onclick="clearPinSearch()">Clear</button>
+      </form>
+    </main>
+    <div id="pin-modal" class="ifsc-modal" style="display:none;">
+      <div class="ifsc-modal-content">
+        <span class="ifsc-modal-close" onclick="closePinModal()">&times;</span>
+        <div id="pin-modal-result"></div>
+        <!-- Modal AdSense Ad -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5037443653543939" data-ad-slot="8502355676" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        <button class="tool-search-btn" onclick="resetPinSearch()" style="width:100%;margin-top:1.2rem;">Search Another</button>
+      </div>
+    </div>
+    <footer>
+      <p>© 2025 LookupJoy. All rights reserved.</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </footer>
+    <script>
+      let pincodeCsvData = null;
+      async function loadPincodeCsvData() {
+        if (pincodeCsvData) return pincodeCsvData;
+        const res = await fetch('../jsdata/pincode.csv');
+        const csvText = await res.text();
+        const parsed = Papa.parse(csvText, {header: true});
+        pincodeCsvData = parsed.data;
+        return pincodeCsvData;
+      }
+      function showPinModal(contentHtml) {
+        document.getElementById('pin-modal-result').innerHTML = contentHtml;
+        document.getElementById('pin-modal').style.display = 'flex';
+      }
+      function closePinModal() {
+        document.getElementById('pin-modal').style.display = 'none';
+      }
+      function resetPinSearch() {
+        closePinModal();
+        clearPinSearch();
+      }
+      function clearPinSearch() {
+        document.getElementById('pin-search-input').value = '';
+        document.getElementById('pin-search-input').focus();
+      }
+      async function handlePinSearch() {
+        const val = document.getElementById('pin-search-input').value.trim();
+        if (!val || !/^[1-9][0-9]{5}$/.test(val)) {
+          showPinModal('<p>Please enter a valid 6-digit PIN code.</p>');
+          return;
+        }
+        showPinModal('<p><i class="fas fa-spinner fa-spin"></i> Searching...</p>');
+        const data = await loadPincodeCsvData();
+        const result = data.find(row => row.Pincode === val);
+        if (result) {
+          showPinModal(`
+            <div class="results-card-inner">
+              <h3><span class="fa-map-pin"></span> ${result.OfficeName} <span style="font-size:0.9rem;color:var(--accent);">(${val})</span></h3>
+              <p><strong>District:</strong> ${result.DistrictName}</p>
+              <p><strong>State:</strong> ${result.StateName}</p>
+              <p><strong>Division:</strong> ${result.DivisionName}</p>
+              <p><strong>Region:</strong> ${result.RegionName}</p>
+              <p><strong>Circle:</strong> ${result.CircleName}</p>
+              <p><strong>Office Type:</strong> ${result.OfficeType}</p>
+              <p><strong>Delivery:</strong> ${result.DeliveryStatus}</p>
+            </div>
+          `);
+        } else {
+          showPinModal('<p style="color:red;">No details found for this PIN code.</p>');
+        }
+      }
+    </script>
+</body>
+</html>
