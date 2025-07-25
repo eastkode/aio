@@ -1,6 +1,3 @@
 User-agent: *
-Disallow: /css/
-Disallow: /js/
-Disallow: /jsdata/
-
+Allow: /
 Sitemap: https://lookupjoy.com/sitemap.xml

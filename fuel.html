@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fuel Price Today - Check Petrol and Diesel Rates in India | LookupJoy</title>
-    <meta name="description" content="Get the latest petrol and diesel prices in your city. Our Fuel Price Lookup tool provides daily updates on fuel rates across India.">
+    <title>Fuel Price Lookup | LookupJoy — India’s Info Hub</title>
+    <meta name="description" content="Check today’s petrol & diesel rates. LookupJoy is India’s trusted hub for daily fuel prices in all cities.">
     <meta property="og:title" content="Fuel Price Lookup | LookupJoy">
     <meta property="og:description" content="Check today’s petrol & diesel rates. LookupJoy is India’s trusted hub for daily fuel prices in all cities.">
     <meta property="og:image" content="/icons/og-image.png">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://lookupjoy.com/fuel.html">
     <link rel="canonical" href="https://lookupjoy.com/fuel.html">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="/icons/og-image.png" type="image/png">
 </head>
@@ -45,10 +45,9 @@
           <span class="tool-page-title" style="font-family:'Poppins',sans-serif;font-weight:700;font-size:1.3rem;color:var(--primary);margin-left:0.5rem;">Fuel Price Lookup</span>
         </div>
             <form class="tool-search-form" onsubmit="event.preventDefault(); handleToolSearch('city')">
-                <label for="tool-search-input" class="sr-only">Enter City</label>
-                <input type="text" id="tool-search-input" class="tool-search-input" placeholder="Enter City" autocomplete="off" value="" aria-label="City Search Input">
-                <button type="submit" class="tool-search-btn" aria-label="Search">Search</button>
-                <button type="button" class="tool-search-another-btn" onclick="clearToolSearch()" aria-label="Clear Search">Search Another</button>
+                <input type="text" id="tool-search-input" class="tool-search-input" placeholder="Enter City" autocomplete="off" value="">
+                <button type="submit" class="tool-search-btn">Search</button>
+                <button type="button" class="tool-search-another-btn" onclick="clearToolSearch()">Search Another</button>
             </form>
             <div id="result" class="results-card">
                 <p>Enter a city above to see fuel prices.</p>
@@ -64,39 +63,6 @@
             <!-- Affiliate link/content goes here -->
         </section>
     </main>
-    <section class="content-section">
-      <h2>About Fuel Prices</h2>
-      <p>Fuel prices in India are revised daily based on the global crude oil prices. The prices vary from state to state due to different local taxes.</p>
-      <h3>Frequently Asked Questions (FAQs)</h3>
-      <dl>
-        <dt>How are fuel prices determined?</dt>
-        <dd>Fuel prices are determined based on the average price of crude oil in the international market and the exchange rate of the Indian rupee against the US dollar.</dd>
-        <dt>Why do fuel prices vary across states?</dt>
-        <dd>Fuel prices vary across states due to differences in state-level taxes, such as Value Added Tax (VAT).</dd>
-        <dt>How can I check the latest fuel prices?</dt>
-        <dd>You can use our Fuel Price Lookup tool to check the latest petrol and diesel prices in your city.</dd>
-      </dl>
-    </section>
-    <section class="related-tools">
-      <h2>Related Tools</h2>
-      <div class="tool-grid">
-        <a href="/pages/rto.html" class="tool-card">
-          <i class="fas fa-car"></i>
-          <h3>RTO Codes</h3>
-          <p>Get vehicle RTO info by code.</p>
-        </a>
-        <a href="/pages/gold.html" class="tool-card">
-          <i class="fas fa-ring"></i>
-          <h3>Gold & Silver Rates</h3>
-          <p>Live gold & silver prices in India.</p>
-        </a>
-        <a href="/pages/std.html" class="tool-card">
-          <i class="fas fa-phone"></i>
-          <h3>STD Codes</h3>
-          <p>Find city STD/ISD codes quickly.</p>
-        </a>
-      </div>
-    </section>
 
     <footer>
         <div class="container">
