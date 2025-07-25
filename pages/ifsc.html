@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IFSC Code Lookup | LookupJoy — India’s Trusted Info Hub</title>
-  <meta name="description" content="Find any Indian bank IFSC code instantly. LookupJoy is India’s trusted hub for IFSC, MICR, and branch details.">
+  <title>IFSC Code Lookup - Find Bank IFSC Codes in India | LookupJoy</title>
+  <meta name="description" content="Quickly find IFSC codes for any bank branch in India. Our IFSC Code Lookup tool provides accurate and up-to-date information for all your banking needs.">
   <meta property="og:title" content="IFSC Code Lookup | LookupJoy">
   <meta property="og:description" content="Find any Indian bank IFSC code instantly. LookupJoy is India’s trusted hub for IFSC, MICR, and branch details.">
   <meta property="og:image" content="/icons/og-image.png">
@@ -36,10 +36,11 @@
       <p>LookupJoy helps you find any Indian bank’s IFSC code, MICR, and branch details instantly. Enter your IFSC code below to get full details, or search by bank and branch name.</p>
     </section>
     <form class="tool-search-form" onsubmit="event.preventDefault(); handleToolSearch('ifsc')">
+      <label for="tool-search-input" class="sr-only">Enter IFSC code</label>
       <i class="fas fa-search"></i>
-      <input type="text" id="tool-search-input" class="tool-search-input" placeholder="Enter IFSC code (e.g. SBIN0000001)" autocomplete="off">
-      <button type="submit" class="tool-search-btn">Search</button>
-      <button type="button" class="tool-search-another-btn" onclick="clearToolSearch()">Clear</button>
+      <input type="text" id="tool-search-input" class="tool-search-input" placeholder="Enter IFSC code (e.g. SBIN0000001)" autocomplete="off" aria-label="IFSC Code Search Input">
+      <button type="submit" class="tool-search-btn" aria-label="Search">Search</button>
+      <button type="button" class="tool-search-another-btn" onclick="clearToolSearch()" aria-label="Clear Search">Clear</button>
     </form>
     <div id="result" class="results-card">
       <p>Enter an IFSC code above to see results.</p>
@@ -48,6 +49,39 @@
     <section class="affiliate-box">
       <h4>Related Financial Services</h4>
       <p>Compare bank accounts, loans, and credit cards.</p>
+    </section>
+    <section class="content-section">
+      <h2>About IFSC Codes</h2>
+      <p>The Indian Financial System Code (IFSC) is an 11-character code assigned by the Reserve Bank of India (RBI) to identify every bank branch participating in the payment system. The first four characters represent the bank, the fifth is a '0', and the last six characters represent the branch.</p>
+      <h3>Frequently Asked Questions (FAQs)</h3>
+      <dl>
+        <dt>What is an IFSC code?</dt>
+        <dd>An IFSC code is an 11-character alphanumeric code that uniquely identifies a bank branch in India.</dd>
+        <dt>Why is an IFSC code required?</dt>
+        <dd>It is used for electronic fund transfers such as RTGS, NEFT, and IMPS.</dd>
+        <dt>How can I find an IFSC code?</dt>
+        <dd>You can use our IFSC Lookup tool to find the IFSC code for any bank branch in India.</dd>
+      </dl>
+    </section>
+    <section class="related-tools">
+      <h2>Related Tools</h2>
+      <div class="tool-grid">
+        <a href="/pages/pin.html" class="tool-card">
+          <i class="fas fa-map-pin"></i>
+          <h3>PIN Codes</h3>
+          <p>Find your area's PIN codes easily.</p>
+        </a>
+        <a href="/pages/rto.html" class="tool-card">
+          <i class="fas fa-car"></i>
+          <h3>RTO Codes</h3>
+          <p>Get vehicle RTO info by code.</p>
+        </a>
+        <a href="/pages/std.html" class="tool-card">
+          <i class="fas fa-phone"></i>
+          <h3>STD Codes</h3>
+          <p>Find city STD/ISD codes quickly.</p>
+        </a>
+      </div>
     </section>
   </main>
   <footer>
